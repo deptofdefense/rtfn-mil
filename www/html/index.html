@@ -1,0 +1,75 @@
+<!--
+AUTHORS: Mr. David J. Stern, Mr. Dan Burnham
+DATE: DEC 2017
+AGENGY: Defense Information Systems Agency
+DEPARTMENT: Defense
+GOVERNMENT: United States
+THIS WORK IS IN THE PUBLIC DOMAIN. please see relevant license information for it's intended use. This work is solely a Government work product and no contractors participated in its creation.
+//-->
+<html class="no-js">
+<head>
+	<title>RTFN-MIL Visualization</title>
+	
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Dependencies --> 	
+	<link rel="stylesheet" href="./leaflet/leaflet.css"/>
+	<link rel="stylesheet" href="./jquery-ui-themes-1.12.1/themes/base/jquery-ui.css"/>
+	<link rel="stylesheet" href="legend.css"/>
+	<link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="./leaflet-control-window-master/src/L.Control.Window.css" />
+	
+	<script src="./leaflet/leaflet-src.js"></script>
+	<script src="./js/jquery-3.2.1.js"></script>
+	<script src="./jquery-ui-1.12.1/jquery-ui.js"></script>
+	<script src="./Leaflet.Control.Custom-master/Leaflet.Control.CustomMOD.js"></script>
+	
+	<!-- Without the two style items below, only a blank page displays. Once included, content displays normally. -->
+	<style>
+		#map {
+			width: 600px;
+			height: 400px;
+		}
+	</style>
+
+	<!-- make UI take up the full dimensions (600x400 px) -->
+	<style>body { padding: 0; margin: 0; } html, body, #map { height: 100vh; width: 100vw; }</style>
+		
+</head>
+<body>
+
+<div id='mapid' style='width:100%;height:100%;'></div>
+<div id='orderBox'>
+<!-- Rough draft for now. Codes UI. Specifically, this allows you to select options for your connection and includes a payment field. Options include UNI1, UNI1 CE-LAN, UNI2(DC), and the Speed for the connection. 
+David, do you want to clarify what the others options mean in this context or no? -->
+
+	<div class='ui-state-error'> <!--this is the div for the error messages -->
+		<ul></ul>
+	</div>
+
+	<b>UNI1: </b><select id='selectUni1' name='selectUni1'><option></option></select> <button type="button" id="clearUni1button" onclick="clearUni1()"><i class="fa fa-times fa-lg" aria-hidden="true"></i></button><!--TODO fix button position--><br><br>
+	<b>UNI1 CE-LAN: </b><select id='selectUni1Celan' name='selectUni1Celan'><option>LOADING</option></select><br><br>
+	<b>UNI2(DC): </b><select id='selectUni2' name='selectUni2'><option>LOADING</option></select><br><br>
+	<b>SPEED: </b><select id='selectSpeed' name='selectSpeed'>
+		<option value="4000">4kbps</option>
+		<option value="10000">10kbps</option>
+		<option value="100000">100kbps</option>
+		<option value="500000">500kbps</option>
+		<option value="1000000">1Mbps</option>
+		<option value="5000000">5Mbps</option>
+		<option value="10000000" selected>10Mbps</option>
+		<option value="100000000">100Mbps</option>
+		<option value="500000000">500Mbps</option>
+		<option value="1000000000">1Gbps</option>
+		<option value="5000000000">5Gbps</option>
+		<option value="10000000000">10Gbps</option>
+	</select><br><br><b>GOV CREDIT CARD NUMBER</b><input length=40><br>
+</div>
+
+<!-- Custom javascript -->
+<script src='index.js'></script>
+
+</body>
+</html>
