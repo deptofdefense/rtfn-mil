@@ -334,7 +334,8 @@
 		if (props !== undefined){
 			for (var i=0; i<props.length; i++){
 				props[i].name = accountId2Name(props[i].name);
-				this._div.innerHTML += '<i ></i>' + (props[i] ? props[i].name + ':' + props[i].bandwidthAvailable + ' Gbps<br>' :'No props available');
+				if (props[i].bandwidthAvailable==null || props[i].bandwidthAvailable==0) {props[i].bandwidthAvailable=0.00;}
+				this._div.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;' + (props[i] ? props[i].name + ':&nbsp;' + (props[i].bandwidthAvailable).toFixed(2) + ' Gbps<br>' :'No props available');
 			}
 		}
 		else {
