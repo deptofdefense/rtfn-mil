@@ -6,7 +6,7 @@ Copyright <Year> <Copyright Holder Name>
 ```
 <Year> <Federal Government Employee Name>
 ````
-2017 David J. Stern
+2017 David J. Stern<br>
 2017 Dan E. Burnham
 ____
 Copyright &lt;Year&gt; U.S. Federal Government (in countries where recognized)
